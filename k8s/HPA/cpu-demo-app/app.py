@@ -10,7 +10,7 @@ def root():
 @app.route('/cpu')
 def cpu_intensive_task():
     result = 1
-    for i in range(1, 1000):
+    for i in range(1, 10000):
         result = result * i
 
     return str(result)
