@@ -2,7 +2,7 @@ apiVersion: v1
 data:
   config.yaml: |
     rules:
-    - seriesQuery: 'number_of_tasks{kubernetes_namespace="prometheus-resources"}'
+    - seriesQuery: 'number_of_tasks{}'
       resources:
         overrides:
           kubernetes_namespace: {resource: "namespace"}
