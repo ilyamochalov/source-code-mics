@@ -13,5 +13,8 @@ spec:
   metrics:
     - type: Pods 
       pods:
-        metricName: number_of_tasks
-        targetAverageValue: 10
+        metric:
+          name: number_of_tasks
+        target:
+          type: AverageValue
+          averageValue: 10
