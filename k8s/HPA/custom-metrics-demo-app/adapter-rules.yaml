@@ -6,11 +6,11 @@ metadata:
 data:
   config.yaml: |
     rules:
-      - seriesQuery: 'number_of_tasks{kubernetes_namespace="prometheus-resources"}'
-        resources:
-          overrides:
-            kubernetes_namespace: {resource: "namespace"}
-            kubernetes_pod_name: {resource: "pod"}
-        name: 
-          as: number_of_tasks
-        metricsQuery: '<<.Series>>{<<.LabelMatchers>>}'
+    - seriesQuery: 'number_of_tasks{kubernetes_namespace="prometheus-resources"}'
+      resources:
+        overrides:
+          kubernetes_namespace: {resource: "namespace"}
+          kubernetes_pod_name: {resource: "pod"}
+      name: 
+        as: number_of_tasks
+      metricsQuery: '<<.Series>>{<<.LabelMatchers>>}'
