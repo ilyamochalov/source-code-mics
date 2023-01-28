@@ -1,0 +1,17 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: custom-metrics-task-demo
+  namespace: hpa-demo
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: custom-metrics-task-demo
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Pods 
+      pods:
+        metricName: number_of_tasks
+        targetAverageValue: 10
