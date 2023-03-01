@@ -1,0 +1,3 @@
+rules:
+  external: 
+    - seriesQuery: '{__name__="placeholder"}'
