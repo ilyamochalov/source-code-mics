@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  config.yaml: |
+    externalRules:
+      - seriesQuery: 'rabbitmq_queue_messages_ready{}' # example
+        metricsQuery: sum(<<.Series>>{<<.LabelMatchers>>}) by (vhost)
+        resources:
+          overrides: { namespace: {resource: "namespace"} }
+        name:
+          as: rabbitmq_queue_messages_ready
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: prometheus-adapter
+  namespace: prometheus-resources
